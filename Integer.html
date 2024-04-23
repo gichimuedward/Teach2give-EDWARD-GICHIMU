@@ -1,0 +1,51 @@
+<!-- Write a program that takes an integer as input and returns true if the input is a power of two. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power of Two Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check if an Integer is a Power of Two</h1>
+    <input type="number" id="userInput" placeholder="Enter an integer">
+    <button onclick="checkPowerOfTwo()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPowerOfTwo() {
+            const userInput = parseInt(document.getElementById('userInput').value);
+            if (userInput <= 0) {
+                document.getElementById('result').textContent = 'Please enter a positive integer.';
+                return;
+            }
+
+            // Check if the number is a power of two
+            if ((userInput & (userInput - 1)) === 0) {
+                document.getElementById('result').textContent = `${userInput} is a power of two!`;
+            } else {
+                document.getElementById('result').textContent = `${userInput} is not a power of two.`;
+            }
+        }
+    </script>
+</body>
+</html>
